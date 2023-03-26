@@ -1,12 +1,19 @@
-function App() {
+import { ref, onValue } from "firebase/database";
+import { useEffect, useState } from 'react';
+import database from "./api/firebase";
 
-  return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </div>
-  )
+function App() {
+  const [data, setData] = useState([]);
+
+  const espDataRef = ref(database, 'test');
+  useEffect(() => {
+    onValue(espDataRef, (snapshot) => {
+      const data = snapshot.val();
+      setData(data);
+    });
+  },[]);
+  console.log(data);
+  
 }
 
-export default App
+export default App;
