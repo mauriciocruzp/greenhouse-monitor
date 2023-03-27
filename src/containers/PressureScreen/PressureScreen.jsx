@@ -7,7 +7,7 @@ function PressureScreen({pressure}) {
             <div className="flex flex-col">
                 <div className="text-primary-purple w-40 h-6 text-center text-xl">Presión</div>
                 <div className="text-primary-purple w-40 h-6 text-center text-xl jus">{pressure}atm/</div>
-                <div className="text-primary-purple w-40 h-6 text-center text-xl jus">{mmghPressure}mmgh</div>
+                <div className="text-primary-purple w-40 h-6 text-center text-xl jus">{mmghPressure}mmHg</div>
             </div>
         </div>
     );
